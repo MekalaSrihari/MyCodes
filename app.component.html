@@ -1,0 +1,107 @@
+<div [ngClass]="'ngClas'">Interpolation and Component Directive Examples</div>
+<h1>{{title}}</h1>
+ 
+<h3>{{firstName}} {{lastName}} how are you?</h3>
+<div [ngClass]="'ngClas'">Attribute Directive Examples</div>
+<h2 [ngStyle]="myStyle">This is Attribute Direcctive</h2>
+<div [hidden]="false">Hey, I’m using hidden attribute. put true i will hide</div>
+<br/>
+<div [ngClass]="'ngClas'">Structural Directive Examples</div>
+<h2 *ngIf="showText">ngIf directive example</h2>
+<button (click)="toggle()">Toggle the ShowText</button>
+<input [(ngModel)]="name1">
+
+   <p>Value: {{ name1 }}</p>
+<br/>
+<div [ngSwitch]="textColor">Below line displayed based on color
+    <h2 *ngSwitchCase="'BLUE'" style=color:blue>This is a blue text</h2>
+    <h2 *ngSwitchCase="'RED'" style=color:red>This is a blue red</h2>
+    <h2 *ngSwitchCase="'YELLOWGREEN'"  style=color:yellowgreen>This is a blue yellowgreen</h2>
+    <h2 *ngSwitchDefault>no colors</h2>
+</div>
+<ul>
+        <li *ngFor="let player of players">{{player.name}}-{{player.city}}</li>
+</ul> 
+
+<table cellpadding="5" cellspacing="0" border="1">
+        <thead>
+          <th>Name</th>
+          <th>City</th> 
+         
+        </thead>
+        <tbody>
+        <tr *ngFor="let playee of players">
+          <td>{{playee.name}}</td>
+          <td>{{playee.city}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div [ngClass]="'ngClas'">Custom Directive Examples</div>
+      <span [customhover]="'red'">This is the Custom Directive hover on me Example</span>
+      <h3 *hidethisElement = "isHidden">This is text for custom structural directive</h3>
+      <div [ngClass]="'ngClas'">{{pipe | titlecase}}</div>
+      <ul>
+            <li *ngFor="let cricketer of players">{{cricketer.name | uppercase }}-{{cricketer.city | lowercase}}</li>
+        </ul>
+        <h4>{{score | currency:'usd':'true'}}</h4>
+        <h4>{{scores | percent}}</h4>
+        <h4>Today Date is: {{today}}</h4>
+        <h4>Today Date is: {{today | date}}</h4>
+        <h4>Today Date is: {{today | date:'medium'}}</h4>
+        <h4>Today Date is: {{today | date:'shortTime'}}</h4>
+        <h4>Today Date is: {{today | date:'mmss'}}</h4>
+        <h5>{{players | json | uppercase}}</h5>
+       <div [ngClass]="'ngClas'">Custom Pipes</div>
+        <h5>The Square of {{score}} is {{score | square}}</h5>
+        <ul>
+                <li *ngFor="let cricketers of players">{{cricketers.name | uppercase | greeting:'Hello':'how are you' | titlecase}}-{{cricketers.city | lowercase}}</li>
+            </ul>
+<div [ngClass]="'ngClas'">Routing examples</div>
+<a [routerLink] = "['/']">Home</a>
+<a [routerLink] = "['/java']">Java</a>
+<a [routerLink] = "['/android']">Android</a>
+
+<div class="router-outlet">
+    <router-outlet></router-outlet>
+    </div>
+<div [ngClass]="'ngClas'">Angular 2/4 Services examples</div>
+<h2>Employee</h2>
+
+
+<h3>Name: </h3> 
+<h4>{{employeeObj.name}}</h4>
+<h3>City: </h3> 
+<h4>{{employeeObj.city}}</h4>
+<h3>Age: </h3>  
+<h4>{{employeeObj.age}}</h4>
+
+<input type="text" [(ngModel)]="empId"> 
+
+<button (click)="getEmployeeDetail()">Get Employee Detailes</button>
+
+<div [ngClass]="'ngClas'">Http Services examples</div>
+<h3>Name: {{countryObj.name}}</h3>
+<h3>Capital: {{countryObj.capital}}</h3>
+<h3>Region: {{countryObj.region}}</h3>
+<h3>Image::<img src="{{countryObj.flag}}" style="width: 300px;"></h3>
+ 
+ <input type="text" [(ngModel)]="countryName">
+ <select [(ngModel)]="countryName">
+    <option *ngFor="let country of countryList" value="{{country.name}}">{{country.name}}</option>>
+ </select>
+
+<button (click)="getCountryInfo()">Get Country Detailes</button> 
+
+<div [ngClass]="'ngClas'">Http Post Services examples</div>
+<h3>Name: <span style="font-size:18px;color:red">{{profileObj.name}}</span></h3>
+<h3>Job: <span style="font-size:18px;color:red">{{profileObj.job}}</span></h3>
+<h3>City: <span style="font-size:18px;color:red">{{profileObj.city}}</span></h3>
+<h3>Id: <span style="font-size:18px;color:red">{{profileObj.id}}</span></h3>
+
+<button (click)="saveUserProfile()">Save Profile</button>
+
+ 
+
+
+     
+
